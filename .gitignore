@@ -1,0 +1,15 @@
+# Backend
+smart-stop/target/
+smart-stop/.mvn/
+*.log
+
+# Frontend
+smart-stop-frontend/node_modules/
+smart-stop-frontend/build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.tar

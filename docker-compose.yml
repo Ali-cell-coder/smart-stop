@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./smart-stop
+    container_name: smart-backend
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./smart-stop-frontend
+    container_name: smart-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
