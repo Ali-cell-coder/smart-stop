@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+helsinki:
+  api:
+    base-url: https://api.digitransit.fi/realtime/vehicle-positions/v1/gtfsrt
