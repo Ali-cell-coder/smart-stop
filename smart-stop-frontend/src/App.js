@@ -111,7 +111,8 @@ function App() {
         setLoading(true);
         setError("");
 
-        const response = await fetch("http://localhost:8080/api/v1/vehicles", {
+        const response = await fetch("https://smart-stop-backend.onrender.com/api/v1/vehicles", {
+
           signal: controller.signal,
         });
 
