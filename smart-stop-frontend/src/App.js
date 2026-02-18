@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
+const API_BASE = "https://smart-stop-backend.onrender.com";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -172,13 +173,16 @@ function App() {
       setSelectedStop(null);
 
       const arrivalsResponse = await fetch(
-        `http://localhost:8080/api/v1/stops/${encodeURIComponent(
+        `${API_BASE}/api/v1/stops/${encodeURIComponent(
           stopId.trim()
         )}/arrivals?limit=10`
       );
+      
       const stopResponse = await fetch(
-        `http://localhost:8080/api/v1/stops/${encodeURIComponent(stopId.trim())}`
+        `${API_BASE}/api/v1/stops/${encodeURIComponent(stopId.trim())}`
       );
+      
+      
 
       if (!arrivalsResponse.ok) {
         throw new Error(
